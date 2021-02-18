@@ -1,46 +1,19 @@
-import './App.css';
 import React from 'react'
+import {RecoilRoot} from 'recoil'
 import Header from '../components/header';
+import Custom from '../components/custom';
+import Custom1 from '../components/custom1';
 
 export default class App extends React.Component{
 
-  constructor(porps){
-    super(porps)
-    this.state={
-      arr : [
-        {
-          headerLabel:"首页",
-          headerUrl:"#/"
-        },
-        {
-          headerLabel:"首页",
-          headerUrl:"#/"
-        },
-        {
-          headerLabel:"首页",
-          headerUrl:"#/"
-        },
-        {
-          headerLabel:"首页",
-          headerUrl:"#/"
-        },
-        {
-          headerLabel:"首页",
-          headerUrl:"#/"
-        },
-        {
-          headerLabel:"首页",
-          headerUrl:"#/"
-        }
-      ]
-    }
-  }
-
   render(){
     return (
-      <div className="App">
-        <Header arr = {this.state.arr}/>
-      </div>
+      <RecoilRoot>
+          <Header/>
+          <Custom/>
+          <Custom1/>
+      </RecoilRoot>
+      
     );
   }
   

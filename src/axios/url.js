@@ -1,7 +1,3 @@
-const url={
-    "test":""
+export const url={
+    
 }
-
-export default Object.assign({
-    url
-})
