@@ -41,7 +41,6 @@ export default class Header extends React.Component{
                 <ul>
                     {
                         this.state.arr.map((item, index) => {
-                          console.log(item)  
                           return(
                                 <li key={index}>
                                     <a href={item.headerUrl}>{item.headerLabel}</a>
