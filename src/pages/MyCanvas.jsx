@@ -50,7 +50,7 @@ export default function MyCanvas() {
 
 
     const createDateTime = () => {
-        let interval = setInterval(() => {
+         setInterval(() => {
             let currentDate = new Date();
             let hour = [parseInt(currentDate.getHours() / 10), currentDate.getHours() % 10];
             let minutes = [parseInt(currentDate.getMinutes() / 10), currentDate.getMinutes() % 10];

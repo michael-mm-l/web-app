@@ -1,18 +1,21 @@
 import React from "react";
 import styled from 'styled-components'
-import { textState } from "../atom/atom";
-import { useRecoilState } from "recoil";
+import {textState} from "../atom/atom";
+import {useRecoilState} from "recoil";
+import {get} from '../axios/axios';
+import url from '../axios/url'
 
-
-export default function Custom(){
+export default function Custom() {
     const [text, setText] = useRecoilState(textState);
 
     const onChange = (event) => {
-        setText("#ff0000");
-      };
+        let res = get(url.my_application_list);
+        setText(res.data)
+        console.log(res)
+    };
 
-    return(
-        <Div  onClick={onChange}>
+    return (
+        <Div onClick={onChange.bind(this)}>
             <div>{text}</div>
         </Div>
     )
@@ -20,15 +23,15 @@ export default function Custom(){
 }
 
 const Div = styled.div`
-    height:300px;
-    width: 100%;
-    margin:0;
+  height: 300px;
+  width: 100%;
+  margin: 0;
 
-    >div{
-        margin-top: 10px;
-        width:100px;
-        height:100px;
-        background-color:#ffff11;
-    }
+  > div {
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: #ffff11;
+  }
 `
 
