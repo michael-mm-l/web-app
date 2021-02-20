@@ -3,15 +3,15 @@ import styled from 'styled-components'
 import {textState} from "../atom/atom";
 import {useRecoilState} from "recoil";
 import {get} from '../axios/axios';
-import url from '../axios/url'
+import url from '../axios/url';
 
 export default function Custom() {
     const [text, setText] = useRecoilState(textState);
 
     const onChange = (event) => {
-        let res = get(url.my_application_list);
-        setText(res.data)
-        console.log(res)
+        get(url.my_application_list).then(resule=>{
+            setText(resule.key)
+        });
     };
 
     return (
